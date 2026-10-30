@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FedRAMP Site Style · Component specimen</title>
+  <link rel="stylesheet" href="fedramp-theme.css">
+  <style>
+    body{margin:0} .specimen-tools{background:#fff;color:#202b30;padding:1rem clamp(1.125rem,3.4vw,3rem);font:15px/1.5 system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;border-bottom:1px solid #bfc5c2}
+    .specimen-tools strong{margin-right:auto}.specimen-tools select{font:inherit;min-height:44px;padding:.5rem;border:1px solid #718289;background:#fff;color:#202b30;border-radius:4px}.specimen-tools label{display:flex;align-items:center;gap:.6rem}.specimen-tools :focus-visible{outline:3px solid #164f6b;outline-offset:3px}.specimen-tools small{width:100%;color:#4d5c62}.fr-filters .fr-field{flex:1;max-width:32rem}.specimen-colour{display:inline-block;width:.7em;height:.7em;background:var(--fr-action);margin-right:.5rem}.fr-section ul{padding-left:1.3rem}.specimen-note{font-size:.9375rem}
+  </style>
+  <script src="preview.js" defer></script>
+</head>
+<body>
+  <div class="specimen-tools fr-no-print" aria-label="Design specimen controls">
+    <strong>FedRAMP Site Style <span aria-hidden="true">/</span> Specimen</strong>
+    <label for="variant">Design variant
+      <select id="variant">
+        <option value="project">Project · FedRAMP foundation</option>
+        <option value="reference">Reference · Rules and trigrams</option>
+        <option value="research">Research · Marketplace SMB</option>
+        <option value="reader">Reader · PDFtoWeb</option>
+        <option value="workbook">Workbook · A–130</option>
+        <option value="radiance">Radiance · Open House</option>
+      </select>
+    </label>
+    <label for="mode">Appearance
+      <select id="mode" disabled aria-describedby="preview-help"><option value="light">Light</option><option value="dark">Dark</option></select>
+    </label>
+    <small id="preview-help">Dark specimens are available for Reader and Radiance. Fonts use local fallbacks; this preview loads no external resources.</small>
+  </div>
+  <div id="specimen" data-fr-theme="project" data-fr-mode="light">
+    <a class="fr-skip" href="#main">Skip to content</a>
+    <header class="fr-masthead">
+      <div class="fr-container fr-header-inner">
+        <a class="fr-brand" href="#main">Evidence Atlas</a>
+        <nav class="fr-nav" aria-label="Primary"><a href="#evidence">Evidence</a><a href="#reading">Reading guide</a><a href="#sources">Design sources</a></nav>
+      </div>
+    </header>
+    <main class="fr-container" id="main" tabindex="-1">
+      <div class="fr-hero">
+        <div>
+          <p class="fr-eyebrow">Project workspace · Illustrative content</p>
+          <h1>A clearer path from evidence to action.</h1>
+          <p class="fr-lead">Bring the work, its sources, and the next decision into one useful place.</p>
+          <p class="fr-measure">A project site should help readers find what matters, understand its context, and see what comes next.</p>
+          <div class="fr-actions"><a class="fr-button" href="#evidence">Explore the evidence <span aria-hidden="true">&nbsp;→</span></a><a href="#reading">Read the project guide</a></div>
+        </div>
+        <aside class="fr-aside" aria-labelledby="direction-heading">
+          <p class="fr-eyebrow">The design direction</p>
+          <h2 id="direction-heading">Familiar structure. Clear next steps.</h2>
+          <p id="direction">Plum identity, a warm action color, and a quiet reading surface bring the FedRAMP references into a flexible project site.</p>
+          <p class="fr-muted specimen-note"><span class="specimen-colour" aria-hidden="true"></span><span id="variant-label">Project foundation</span></p>
+        </aside>
+      </div>
+      <section class="fr-section" id="evidence" aria-labelledby="evidence-title">
+        <p class="fr-eyebrow">01 / Explore the work</p>
+        <h2 id="evidence-title">Evidence with its context intact</h2>
+        <p class="fr-measure">Filter the example records, read their notes, and keep the status visible beside the work it describes.</p>
+        <div class="fr-filters">
+          <div class="fr-field"><label for="evidence-query">Find an example record</label><input class="fr-input" id="evidence-query" type="search" placeholder="Try architecture or decision" aria-controls="evidence-rows"></div>
+          <button class="fr-button fr-button--secondary" id="reset-filter" type="button">Reset filter</button>
+        </div>
+        <p class="fr-muted" id="result-count" role="status" aria-live="polite">3 example records</p>
+        <div class="fr-table-scroll" tabindex="0" role="region" aria-label="Example evidence table, horizontally scrollable on small screens">
+          <table class="fr-table">
+            <caption>Illustrative project records — these are not FedRAMP determinations.</caption>
+            <thead><tr><th scope="col">Record</th><th scope="col">Status</th><th scope="col">Context</th></tr></thead>
+            <tbody id="evidence-rows">
+              <tr data-search="architecture brief reviewed"><th scope="row">Architecture brief</th><td><span class="fr-badge fr-badge--success">Reviewed</span></td><td><details><summary>Read note</summary><p>Example of a reviewed project artifact. A real site should identify the source, edition, and reviewer.</p></details></td></tr>
+              <tr data-search="data inventory in progress"><th scope="row">Data inventory</th><td><span class="fr-badge">In progress</span></td><td><details><summary>Read note</summary><p>Example of ongoing work. Keep missing information explicit rather than treating it as completed.</p></details></td></tr>
+              <tr data-search="decision log needs input"><th scope="row">Decision log</th><td><span class="fr-badge fr-badge--caution">Needs input</span></td><td><details><summary>Read note</summary><p>Example of a decision awaiting input. This specimen does not assess or approve a service.</p></details></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p id="empty-state" hidden>No example records match. Clear the search or reset the filter.</p>
+      </section>
+      <section class="fr-section" id="reading" aria-labelledby="reading-title">
+        <div class="fr-reader-grid">
+          <details class="fr-toc" open>
+            <summary>On this page</summary>
+            <nav aria-label="Reading guide contents"><a href="#reading-title">A useful reading experience</a><a href="#source-trail">Keep the source trail</a><a href="#sources">Design sources</a></nav>
+          </details>
+          <article class="fr-measure fr-prose">
+            <p class="fr-eyebrow">02 / Read with confidence</p>
+            <h2 id="reading-title">A useful reading experience</h2>
+            <p>Give the main content enough room to breathe. Keep navigation close, preserve meaningful headings, and make deeper detail available when the reader needs it.</p>
+            <div class="fr-callout"><strong>Context belongs beside the claim.</strong><p>Sources, dates, and limitations help readers understand how to use the information.</p></div>
+            <h3 id="source-trail">Keep the source trail</h3>
+            <p>Use the same clear hierarchy for a short project update, a long report, or an evidence table. Adapt the layout to the task while keeping the site recognizable.</p>
+          </article>
+        </div>
+      </section>
+      <section class="fr-section" id="sources" aria-labelledby="sources-title">
+        <p class="fr-eyebrow">03 / The references</p>
+        <h2 id="sources-title">A family of useful design patterns</h2>
+        <p class="fr-measure">The skill records the distinct contributions of these references. This specimen is an original adaptation and uses no official logos or copied artwork.</p>
+        <ul>
+          <li><a href="https://www.fedramp.gov/">FedRAMP.gov</a> and <a href="https://preview.fedramp.gov/2026/trigrams/">2026 trigrams</a></li>
+          <li><a href="https://github.com/FedRAMP/2026">FedRAMP 2026 repository</a></li>
+          <li><a href="https://pete-wai.github.io/marketplace-smb/">Marketplace SMB</a></li>
+          <li><a href="https://pete-wai.github.io/pdftoweb/reports/nist-ir-8547/">PDFtoWeb report</a></li>
+          <li><a href="https://pete-wai.github.io/fedramp-a130/proposed-fedramp-use/index.html">A–130 working paper</a></li>
+          <li><a href="https://pete-wai.github.io/fedramp-design-concepts/">Design concepts / Radiance</a></li>
+        </ul>
+      </section>
+    </main>
+    <footer class="fr-footer"><div class="fr-container">FedRAMP-inspired design specimen · Independent project styling · Example content</div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "FedRAMP Site Style"
+  short_description: "Style project sites with FedRAMP and Pete patterns"
+  default_prompt: "Use $fedramp-site-style to apply the FedRAMP project style to this site while preserving its functionality."
